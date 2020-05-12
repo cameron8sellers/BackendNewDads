@@ -12,7 +12,7 @@ from .models import User
 
 
 class RegistrationAPIView(APIView):
-    permission_classes = (AllowAny)
+    permission_classes = (AllowAny,)
     serializer_class = RegistrationSerializer
 
     def post(self, request):
@@ -31,7 +31,7 @@ class RegistrationAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class LoginAPIView(APIView):
-    permission_classes = (AllowAny)
+    permission_classes = (AllowAny,)
     serializer_class = LoginSerializer
 
     def post(self, request):

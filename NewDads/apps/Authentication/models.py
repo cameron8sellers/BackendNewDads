@@ -16,7 +16,7 @@ class UserManager(BaseUserManager):
         if username is None:
             raise TypeError("Please Make a Username")
         if email is None:
-            raise TypeError("Enter an email adress")
+            raise TypeError("Enter an email address")
         user = self.model(
             username=username,
             email=self.normalize_email(email),
@@ -56,7 +56,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     @property
     def token(self):
-        return self._generate_jwt_token(self)
+        return self._generate_jwt_token()
 
     def _generate_jwt_token(self):
 

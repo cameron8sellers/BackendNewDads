@@ -17,7 +17,7 @@ from .serializers import (
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
         queryset = Category.objects.all().filter(owner = self.request.user)
